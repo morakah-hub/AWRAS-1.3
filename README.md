@@ -1,6 +1,6 @@
 # AWRAS 1.3
 
-**Printed in one go on a K2 Plus, given a Raspberry Pi 5, and taken unassembled to HackUMass XIV, where it was turned into an autonomous balloon popper. It's still an AI UAV research plane.**
+**Wing halves printed in one piece each on a K2 Plus, given a Raspberry Pi 5, and taken unassembled to HackUMass XIV, where it was turned into an autonomous balloon popper. It's still an AI UAV research plane.**
 
 ![Version](https://img.shields.io/badge/version-1.3-blue)
 ![Status](https://img.shields.io/badge/status-bench%20tested%20%E2%80%94%20first%20flight%20next-orange)
@@ -24,7 +24,7 @@ Design and analysis are in [1.0](https://github.com/morakah-hub/AWRAS-1.0). The 
 
 ## What changed from 1.2
 
-- **The wing is one piece.** I printed it on a Creality K2 Plus, so the whole wing came out in one go instead of being glued together from separate printed sections. With no joints, it's lighter, and the control-surface inaccuracies that came from lining sections up are gone.
+- **Each wing half is one piece.** I printed them on a Creality K2 Plus, so each half came out in one go instead of being glued together from separate printed sections. With fewer joints, the wing is lighter, and the control-surface inaccuracies that came from lining sections up are gone.
 - **3D-printed hinges instead of duct tape.** The taped control surfaces were a big part of why 1.2 crashed. The hinges are now printed parts.
 - **Holes for the camera.** The airframe has openings for the Raspberry Pi Camera Module 3, which looks forward out of the nose.
 - **A Raspberry Pi 5 on board.** This is the big one. The Pi runs the vision and guidance, and talks to the flight controller.
@@ -41,12 +41,9 @@ Everything else carries over from 1.2: the SpeedyBee F405 Wing running INAV, the
 
 We went to HackUMass XIV with the printed airframe still unassembled, a Raspberry Pi 5, and a camera. Over the weekend the airframe was glued and wired, the Pi went in, and we trained the detector and built the autopilot there.
 
-The project was a two-person build with **Henry Chen ([toyJig](https://github.com/toyJig))**:
+The project was a two-person build with **Henry Chen ([toyJig](https://github.com/toyJig))**. Together we trained the detector, wrote the guidance code, connected the Pi to the flight controller, built and wired the plane, and set up the link between the flight controller and the transmitter.
 
-- **Henry** trained the detector, wrote the guidance code, and connected the Pi to the flight controller.
-- **I** designed, built and wired the plane, and set up the link between the flight controller and the transmitter. I was with Henry while he worked on the vision side, giving suggestions, feedback and corrections.
-
-The competition code lives in Henry's repo, [toyJig/UAV-Balloon-Popper](https://github.com/toyJig/UAV-Balloon-Popper). We both own that repo and the work on the plane. A copy is in [`autopilot/`](autopilot/) here, so this plane's repo holds everything it flies with.
+The competition code is in [`autopilot/`](autopilot/) in this repo. It's the same code as the competition repo, [toyJig/UAV-Balloon-Popper](https://github.com/toyJig/UAV-Balloon-Popper). We both own that repo and the work on the plane.
 
 ### Why balloons
 
@@ -99,7 +96,7 @@ None of this has flown yet. These are bench, dataset and simulator numbers.
 
 ## What came off the Pi
 
-The `autopilot/` folder is Henry's repo at commit `32283fc`. I checked it against a backup taken from the plane's Pi, and the code matches. The one thing the repo didn't include is the model, so the detector that was actually deployed (`balloon_drone_v2`) is added from the Pi in [`autopilot/models/`](autopilot/models/).
+The `autopilot/` folder is the competition repo at commit `32283fc`. I checked it against a backup taken from the plane's Pi, and the code matches. The one thing the repo didn't include is the model, so the detector that was actually deployed (`balloon_drone_v2`) is added from the Pi in [`autopilot/models/`](autopilot/models/).
 
 ---
 
@@ -119,7 +116,7 @@ autopilot/     the HackUMass autopilot (from toyJig/UAV-Balloon-Popper)
 
 ## Status
 
-- [x] Wing printed in one go on the K2 Plus
+- [x] Each wing half printed in one piece on the K2 Plus
 - [x] 3D-printed hinges
 - [x] Camera holes in the airframe
 - [x] Airframe assembled and wired at HackUMass XIV
